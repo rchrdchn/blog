@@ -1,0 +1,14 @@
+<div>
+    <% if @posts.blank? %>
+    <p>There aren't any blog posts yet...</p>
+    <% else %>
+    <p>Enjoy reading!</p>
+    <ul>
+        <% @posts.each do |post| %>
+        <li><%= link_to post.title, post_path(post) %></li>
+        <% end %>
+    </ul>
+    <% end %>
+
+    <p><%= link_to 'New Post', new_post_path %></p>
+</div>
