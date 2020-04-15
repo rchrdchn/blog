@@ -1,2 +1,7 @@
-<h1>Welcome to Jumpstart!</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+Welcome!
+
+<% @posts.each do |post| %>
+    <p><%= link_to post.title, post_path(post) %></p>
+<% end %>
+
+<p><%= link_to 'New Post', new_post_path %></p>
