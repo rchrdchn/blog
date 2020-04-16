@@ -1,11 +1,10 @@
 <div>
 	<div>
-		<p>Title</p>
-		<%= @post.title %>
+		<h3>You are reading "<%= @post.title %>"</h3>
 	</div>
 	<div>
-		<p>Body</p>
 		<%= @post.body %>
 	</div>
+	<%= link_to 'Edit Post', edit_post_path(@post) %>
 	<%= link_to 'Go back', posts_path %>
 </div>
