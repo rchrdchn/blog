@@ -2,7 +2,7 @@
     <% if @posts.blank? %>
     <p>There aren't any blog posts yet...</p>
     <% else %>
-    <p>Enjoy reading!</p>
+    <p>There are <%= @posts.length %> posts... Have a good time!</p>
     <ul>
         <% @posts.each do |post| %>
         <li><%= link_to post.title, post_path(post) %></li>
