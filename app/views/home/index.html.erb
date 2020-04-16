@@ -1,7 +1,16 @@
 <h1>Welcome!</h1>
+<div>
+    <% if @posts.blank? %>
+        <p>There aren't any blog posts yet...</p>
+    <% else %>
+        <p>There are <%= @posts.length %> posts... Have a good time!</p>
+        <div>
+            <% @posts.each do |post| %>
+                <h3><%= link_to post.title, post_path(post) %></h3> <p>Posted <%= local_time_ago(post.created_at) %>
+            </p>
+            <% end %>
+        </div>
+    <% end %>
 
-<% @posts.each do |post| %>
-    <p><%= link_to post.title, post_path(post) %></p>
-<% end %>
-
-<p><%= link_to 'New Post', new_post_path %></p>
+    <p><%= link_to 'New Post', new_post_path %></p>
+</div>
