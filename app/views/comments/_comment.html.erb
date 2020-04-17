@@ -2,4 +2,5 @@
   <i>Commented <%= local_time_ago(comment.created_at) %></i>
   <p>Commenter: <%= comment.commenter %></p>
   <p>Comment: <%= comment.body %></p>
+  <p><%= link_to 'Delete Comment', [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" } %></p>
 </div>
