@@ -2,5 +2,5 @@
     <h3>You are editing "<%= @post.title %>"</h3>
     <%= render 'form' %>
 
-    <%= link_to 'Never mind...', posts_path %>
+    <%= link_to 'Never mind...', post_path(@post) %>
 </div>
