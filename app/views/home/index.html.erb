@@ -6,7 +6,7 @@
         <p>There are <%= @posts.length %> posts... Have a good time!</p>
         <div>
             <% @posts.each do |post| %>
-                <h3><%= link_to post.title, post_path(post) %></h3> <p>Posted <%= local_time_ago(post.created_at) %>
+                <h3><%= link_to post.title, post_path(post) %> <span>(<%= pluralize(post.comments.count, "comment") %>)</span></h3> <p>Posted <%= local_time_ago(post.created_at) %>
             </p>
             <% end %>
         </div>
