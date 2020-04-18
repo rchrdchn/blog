@@ -1,7 +1,7 @@
 <div>
 	<div>
 		<h3>You are reading "<%= @post.title %>"</h3>
-		<p>Posted <%= local_time_ago(@post.created_at) %>
+		<p>Posted by <%= current_user.first_name %> - <em><%= local_time_ago(@post.created_at) %></em>
 	</div>
 	<div>
 		<%= @post.body %>

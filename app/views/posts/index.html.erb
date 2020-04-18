@@ -4,8 +4,8 @@
     <% else %>
     <p>There are <%= @posts.length %> posts... Have a good time!</p>
     <div>
-        <% @posts.each do |post| %>
-            <h3><%= link_to post.title, post_path(post) %></h3> <p>Posted <%= local_time_ago(post.created_at) %>
+        <% current_user.posts.each do |post| %>
+            <h3><%= link_to post.title, post_path(post) %></h3> <p>Posted by <%= current_user.first_name %> - <em><%= local_time_ago(post.created_at) %></em>
         </p>
         <% end %>
     </div>
